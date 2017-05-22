@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+<b:thumbnail>
+	<div class="context">
+		<b:image alt="Generic placeholder thumbnail" value="apple.jpg"
+			style-class="img-responsive"></b:image>
+		<div class="context-overlay">
+			<div class="context-text">Description</div>
+		</div>
+	</div>
+	<f:facet name="caption">
+		<h4>Northstar - Artitecture</h4>
+		<b:container fluid="true">
+			<b:row>
+				<div class="col-xs-8 col-sm-8 col-lg-10" style="padding-left: 0px">
+					<b:buttonGroup>
+						<b:button icon-awesome="eye" value="200" size="xs"></b:button>
+						<b:button icon-awesome="thumbs-up" size="xs" value="10"></b:button>
+					</b:buttonGroup>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-lg-2 text-right" style="padding-right: 0px">
+					<b:button icon-awesome="arrows-alt" size="xs" onclick="$('.videoModelClass').modal('show');return true;"></b:button>
+				</div>
+			</b:row>
+		</b:container>
+	</f:facet>
+</b:thumbnail>
+
+<b:modal id="model" title="Video" style-class="videoModelClass">
+	<b:panel>
+		<p>This is a video model</p>
+	</b:panel>
+</b:modal>
+</html>

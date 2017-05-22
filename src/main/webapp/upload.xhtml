@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<b:jumbotron style="padding: 15px;">
+		<b:container fluid="true">
+			<h2>Upload your videos</h2>
+			<h:form>
+				<b:row>
+					<b:column col-sm="4">
+						<b:panel collapsible="false" title="Only upload videos that:"></b:panel>
+
+						<b:panel title="Other information" collapsible="false"></b:panel>
+					</b:column>
+					<b:column col-sm="8">
+						<b:panel collapsible="false">
+							<b:row>
+								<div class="col-sm-12 text-center" style="padding-top: 20px;">
+									<b:iconAwesome name="upload" style-class="fa-5x"></b:iconAwesome>
+								</div>
+								<div class="col-sm-12 text-center" style="padding-top: 20px;">
+									<b:button look="info" value="Choose files to upload"></b:button>
+								</div>
+							</b:row>
+							<b:row style="padding-top: 20px;">
+								<div class="col-xs-2"></div>
+								<div class="col-xs-8">
+								<b:container>
+							
+									<b:form horizontal="true">
+										<b:inputText value="" placeholder="Hit return to create label" tags="true"
+											typeahead="true"
+											typeahead-values="[Arch Enemy, Blind Guardian, Children of Bodom, Dimmu Borgir, Edge of Sanity, Fields of the Nephilim, Gates of Ishtar, Holy Moses, Iced Earth, Jethro Tull, Kreator, Lamb of God, Mekong Delta, Night in Gales, Old Dead Tree, Persefone, Running Wild, Skyclad, The Dillinger Escape Plan, Theater of Tragedy, Unleashed, Vanden Plas, Within Temptation, Xystus, Yes, Zenobia]"
+											tiny-screen="full-width"></b:inputText>
+									</b:form>
+								</b:container>
+									
+								</div>
+								<div class="col-xs-2"></div>
+								
+								
+							</b:row>
+							<b:row>
+								<div class="col-xs-12" style="padding-top: 100px;">
+
+									<div class="col-xs-5">
+										<b:form horizontal="true">
+											<div class="input-group">
+												<span class="input-group-addon" id="basic-addon1">Groups</span>
+												<input type="text" class="form-control"
+													placeholder="Search for group"
+													aria-describedby="basic-addon1" />
+											</div>
+										</b:form>
+
+									</div>
+
+									<div class="col-xs-5">
+										<b:form horizontal="true">
+											<div class="input-group">
+												<span class="input-group-addon" id="basic-addon1">Application</span>
+												<input type="text" class="form-control"
+													placeholder="Search for app"
+													aria-describedby="basic-addon1" />
+											</div>
+										</b:form>
+									</div>
+									<div class="col-xs-2">
+										<b:button icon-awesome="upload" value="Upload"
+											style-class="pull-right"></b:button>
+									</div>
+								</div>
+
+							</b:row>
+
+							<!-- 							<b:column medium-screen="6" style-class="message"> -->
+							<!-- 								<b:message for="" /> -->
+							<!-- 							</b:column> -->
+						</b:panel>
+					</b:column>
+				</b:row>
+			</h:form>
+		</b:container>
+	</b:jumbotron>
+
+
+</h:body>
+</html>
