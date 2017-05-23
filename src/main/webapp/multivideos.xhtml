@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<h:outputScript library="js" name="main.js"></h:outputScript>
+
+</h:head>
+<h:body>
+	<b:container>
+		<b:jumbotron>
+			<b:panel title="Videos">
+			<b:row>
+				<f:repeat var="video" value="#{videoService.files}">
+					
+						<b:column small-screen="4">
+							<video id="#{video.filename}" width="320" height="240" controls="true">
+								<source src="keepclean.mp4" type="video/mp4" />
+								<source src="keepclean.ogg" type="video/ogg" />
+							</video>
+							<b:button icon-awesome="#{video.active ? 'thumbs-up': 'thumbs-down'}" value="#{video.active}"></b:button>
+						</b:column>
+					
+				</f:repeat>
+				</b:row>
+			</b:panel>
+		</b:jumbotron>
+	</b:container>
+
+</h:body>
+
+</html>
