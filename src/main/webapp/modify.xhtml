@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head></h:head>
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<ui:insert name="nbtop">
+		<ui:include src="navbar.xhtml" />
+	</ui:insert>
+	<b:jumbotron style="padding: 15px;">
+		<b:container fluid="false">
+			<h2>Edit Application and Groups</h2>
+			<h:form>
+				<b:dataTable value="#{videoService.metaData}" var="data"
+					class="editableMetaTable" page-length-menu="[5,10,15,20]" page-length="5">
+					
+					<b:dataTableColumn label="Groups">
+						<b:inputText value="#{data.groupName}" rendered="#{data.editable}" />
+						<h:outputText value="#{data.groupName}" rendered="#{not data.editable}" />
+					</b:dataTableColumn>
+					
+					<b:dataTableColumn label="Application" order="asc" data-search="#{data.groupName} #{data.applicationName}">
+						<b:inputText value="#{data.applicationName}" rendered="#{data.editable}" />
+						<h:outputText value="#{data.applicationName}" rendered="#{not data.editable}"/>
+					</b:dataTableColumn>
+					
+					<b:dataTableColumn label="Action">
+						<b:commandButton icon-awesome="#{data.editable ? 'save':'edit'}" ajax="true"
+							update="@(.editableMetaTable)" onclick="ajax:data.edit()">
+						</b:commandButton>
+						<b:commandButton icon-awesome='trash'>
+						</b:commandButton>
+					</b:dataTableColumn>
+				</b:dataTable>
+			</h:form>
+		</b:container>
+	</b:jumbotron>
+</h:body>
+</html>
