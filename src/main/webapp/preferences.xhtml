@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<h:outputScript library="js" name="main.js"></h:outputScript>
+</h:head>
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<ui:insert name="nbtop">
+		<ui:include src="navbar.xhtml" />
+	</ui:insert>
+	<f:metadata>
+		<f:event listener="#{preferences.init}" type="preRenderView"></f:event>
+	</f:metadata>
+	<b:jumbotron style="padding: 15px;">
+		<b:container fluid="false">
+			<h:form>
+				<b:row>
+					<b:buttonGroup>
+						<b:commandButton value="Application Preferences"
+							action="#{preferences.enablePanel}" look="info"
+							update="@(.dumb)" ajax="true">
+							<f:param name="preferenceType" value="1"></f:param>
+						</b:commandButton>
+						<b:commandButton value="Groups Preferences"
+							action="#{preferences.enablePanel}" update="@(.dumb)">
+							<f:param name="preferenceType" value="2"></f:param>
+						</b:commandButton>
+						<b:commandButton value="Favorite Videos"
+							action="#{preferences.enablePanel}" update="@(.dumb)">
+							<f:param name="preferenceType" value="3"></f:param>
+						</b:commandButton>
+					</b:buttonGroup>
+
+				</b:row>
+
+				<br />
+
+				<b:row style-class="dump">
+
+					<c:forEach var="entry" items="#{preferences.showPanel}">
+						<c:if test="${entry.value}">
+							<b:panel title="#{entry.key}"></b:panel>
+						</c:if>
+					</c:forEach>
+
+				</b:row>
+
+			</h:form>
+		</b:container>
+	</b:jumbotron>
+</h:body>
+</html>

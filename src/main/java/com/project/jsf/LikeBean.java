@@ -13,34 +13,41 @@ import javax.faces.context.FacesContext;
 
 import org.primefaces.context.RequestContext;
 
-@ManagedBean(name="likeBean")
+@ManagedBean(name = "likeBean")
 @SessionScoped
 public class LikeBean {
 	private Map<String, Boolean> items;
 	private List<String> cities;
 	private List<String> selectedCities;
-	
-	
+
 	public void remove() {
-		
+
 		List<String> removeCities = new ArrayList<String>();
-		for(String str: selectedCities) {
+		for (String str : selectedCities) {
 			removeCities.add(str);
 		}
-		
+
 		cities.clear();
 		selectedCities.clear();
-		
+
 		cities.addAll(removeCities);
 		selectedCities.addAll(cities);
-		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Changes has been saved!"));
+		FacesContext.getCurrentInstance().addMessage(null,
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Changes has been saved!"));
 	}
-	
+
 	public List<String> getSelectedCities() {
 		return selectedCities;
 	}
 
+	public void selectAll() {
+		selectedCities.clear();
+		selectedCities.addAll(cities);
+	}
 
+	public void reset() {
+		RequestContext.getCurrentInstance().reset("form:panel");
+	}
 
 	public void setSelectedCities(List<String> selectedCities) {
 		this.selectedCities = selectedCities;
@@ -49,74 +56,59 @@ public class LikeBean {
 	public void init() {
 		items = new HashMap<String, Boolean>();
 		items.put("I play football", true);
-		items.put("I watch movies",false);
-		items.put("I like to traval",false);
-		items.put("I am foodie",true);
-		
+		items.put("I watch movies", false);
+		items.put("I like to traval", false);
+		items.put("I am foodie", true);
+
 		cities = new ArrayList<String>();
 		selectedCities = new ArrayList<String>();
-		
+
 		cities.add("Delhi");
 		cities.add("Mumbai");
 		cities.add("Kolkata");
-		
-		selectedCities.addAll(cities);		
+		selectedCities.add(cities.get(1));
+
+		// selectedCities.addAll(cities);
 	}
-		
-	
-	
+
 	public Map<String, Boolean> getItems() {
 		return items;
 	}
-
-
 
 	public void setItems(Map<String, Boolean> items) {
 		this.items = items;
 	}
 
-
-
 	public List<String> getCities() {
 		return cities;
 	}
-
-
 
 	public void setCities(List<String> cities) {
 		this.cities = cities;
 	}
 
-
-
 	public List<String> getSelectCities() {
 		return selectedCities;
 	}
-
-
 
 	public void setSelectCities(List<String> selectCities) {
 		this.selectedCities = selectCities;
 	}
 
-
-
 	public void setitems(Map<String, Boolean> items) {
 		this.items = items;
 	}
-	
+
 	public Map<String, Boolean> getitems() {
 		return items;
 	}
-	
+
 	public void toggle() {
 		RequestContext context = RequestContext.getCurrentInstance();
 		context.addCallbackParam("name", "Rana");
 		System.out.println("Hello world");
 		context.execute("$('#clickbuttonid').click()");
-		
-		
+
 	}
-	
-	
+
 }

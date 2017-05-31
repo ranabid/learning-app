@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
-	<h:head></h:head>
+<h:head></h:head>
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
 	<ui:insert name="nbtop">
 		<ui:include src="navbar.xhtml" />
@@ -15,16 +15,34 @@
 	<b:jumbotron style="padding: 15px;">
 		<b:container fluid="false">
 			<h:form>
-				<b:panel id="panel">
+				<b:panel id="panel1">
 					<p:selectManyCheckbox value="#{likeBean.selectedCities}" var="city">
-						<f:selectItems value="#{likeBean.cities}" var="city" itemLabel="#{city}" itemValue="#{city}"></f:selectItems>
+						<f:selectItems value="#{likeBean.cities}" var="city"
+							itemLabel="#{city}" itemValue="#{city}"></f:selectItems>
 					</p:selectManyCheckbox>
 				</b:panel>
-				
-				<b:commandButton value="Save" update="panel" action="${likeBean.remove}" look="info"/>
-				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+				<b:commandButton value="Save" update="panel1"
+					action="${likeBean.remove}" look="info" />
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
 			</h:form>
-			
+			<h:form id="form2">
+				<b:panel id="panel2">
+					<p:selectManyCheckbox value="#{likeBean.selectedCities}" var="city">
+						<f:selectItems value="#{likeBean.cities}" var="city"
+							itemLabel="#{city}" itemValue="#{city}"></f:selectItems>
+					</p:selectManyCheckbox>
+				</b:panel>
+				<b:buttonGroup>
+					<b:commandButton value="SelectAll" update="panel2"
+						action="${likeBean.selectAll}" look="info" />
+					<b:commandButton value="Reset" update="panel2"
+						 look="info" process="@this">
+						<p:resetInput target="panel2"></p:resetInput>
+					</b:commandButton>
+				</b:buttonGroup>
+			</h:form>
 		</b:container>
 	</b:jumbotron>
 </h:body>
