@@ -9,17 +9,80 @@
 	<meta charset="utf-8" />
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link rel="icon" href="cherry.ico" />
+	<title><ui:insert name="title">vLib</ui:insert></title>
 	<h:outputStylesheet library="css" name="bootstrap4.min.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
 
 </h:head>
-<h:body style="padding-top:50px">
+<h:body>
+	<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-	<div class="container">
-		<div class="card" style="max-height: 100%;">
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="navbar-brand" href="#">
+						<h:graphicImage library="img" name="cherry-logo.png" width="30"
+							height="30" styleClass="d-inline-block align-top" alt="" />Videos Library
+				</a></li>
+
+
+				<li class="nav-item">
+					<button type="button" class="btn btn-outline-info">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+					</button>
+					
+				</li>
+				
+<!-- 				<div class="btn-group"> -->
+<!-- 				<button type="button" class="btn btn-outline-info fa fa-bars"></button> -->
+<!-- 				</div> -->
+
+			</ul>
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-info dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Rana Bid</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<button class="dropdown-item" type="button">Preferences</button>
+					<div class="dropdown-divider"></div>
+					<button class="dropdown-item" type="button">Logout</button>
+				</div>
+			</div>
+
+
+		</div>
+	</nav>
+	<div class="container-fluid"
+		style="padding-left: 50px; padding-right: 50px; padding-top: 15px">
+		<div class="row" style="padding-bottom: 15px">
+			<div class="col-4">
+				<h4>Top 15 videos</h4>
+			</div>
+			<div class="col-8">
+				<div class="float-right">
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="text"
+							placeholder="Search" />
+						<button class="btn btn-outline-info" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="card" id="video-panel" style="overflow-y: scroll">
 			<div class="card-block">
 				<div class="card-deck">
 					<div class="row">
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 							<div class="card">
 								<video
 									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
@@ -34,7 +97,7 @@
 							</div>
 
 						</div>
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 
 							<div class="card">
 								<video
@@ -49,54 +112,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-					</div>
-	<div class="row">
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-						<div class="col" style="padding-bottom:25px;">
-
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-						</div>
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 							<div class="card">
 								<video
 									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
@@ -113,7 +129,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 							<div class="card">
 								<video
 									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
@@ -128,7 +144,7 @@
 							</div>
 
 						</div>
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 
 							<div class="card">
 								<video
@@ -143,54 +159,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div class="row">
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-						<div class="col" style="padding-bottom:25px;">
-
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-						</div>
-						<div class="col" style="padding-bottom:25px;">
+						<div class="col" style="padding-bottom: 25px;">
 							<div class="card">
 								<video
 									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
@@ -206,62 +175,25 @@
 
 						</div>
 					</div>
-					<div class="row">
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-						<div class="col" style="padding-bottom:25px;">
-
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-						</div>
-						<div class="col" style="padding-bottom:25px;">
-							<div class="card">
-								<video
-									src="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"
-									width="100%" controls="controls" />
-								<div class="card-block">
-									<h4 class="card-title">Video title</h4>
-									<p class="card-text">Video description</p>
-								</div>
-								<div class="card-footer">
-									<small class="text-muted">View</small>
-								</div>
-							</div>
-
-						</div>
-					</div>
-
 				</div>
 			</div>
+		</div>
+
+		<div class="btn-group float-right" role="group"
+			style="padding-top: 15px;">
+			<button type="button" class="btn btn-info btn-sm ">First</button>
+			<button type="button" class="btn btn-info btn-sm ">Previous</button>
+			<button type="button" class="btn btn-info btn-sm">Next</button>
+			<button type="button" class="btn btn-info btn-sm">Last</button>
+
 		</div>
 	</div>
 
 	<h:outputScript library="js" name="jquery.min.js"></h:outputScript>
 	<h:outputScript library="js" name="tether.min.js"></h:outputScript>
 	<h:outputScript library="js" name="bootstrap4.min.js"></h:outputScript>
+	<h:outputScript library="js" name="main.js"></h:outputScript>
+
 
 </h:body>
 </html>

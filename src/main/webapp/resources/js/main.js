@@ -1,12 +1,15 @@
-$(document).ready(function() {
-//	$('video').on('play pause', function(event) {
-//		console.log('Curent video: ' + event.target.id);
-//	});
-	
-	$('table').find('tr').css( "background-color", "inherit");
-	$('table').find('td').css( "border", "none");
+$(window).resize(function() {
+	var h = $(window).height();
+	h = h - 190;
+	$('#video-panel').height(h);
+	console.log("Video panel height: "+$('#video-panel').height());
 });
 
-var toggleStyle = function() {
-	console.log("hello world");
-};
+$(window).trigger('resize');
+
+
+
+//SideNav Initialization
+$(".button-collapse").sideNav();
+
+
