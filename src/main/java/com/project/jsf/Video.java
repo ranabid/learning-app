@@ -5,12 +5,12 @@ import java.util.Random;
 public class Video {
 	private int id;
 	private String filename;
-	private String videoFormat;
+	private String fileUrl;
 	private boolean active;
 	
-	public Video(String name, String format, boolean status) {
+	public Video(String name, String url, boolean status) {
 		filename = name;
-		videoFormat = format;
+		fileUrl = url;
 		id = new Random().nextInt(1000);
 		active = status;
 	}
@@ -42,10 +42,10 @@ public class Video {
 		this.filename = filename;
 	}
 	public String getVideoFormat() {
-		return videoFormat;
+		return fileUrl;
 	}
-	public void setVideoFormat(String videoFormat) {
-		this.videoFormat = videoFormat;
+	public void setVideoFormat(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 
 }

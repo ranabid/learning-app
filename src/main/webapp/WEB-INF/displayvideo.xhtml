@@ -2,11 +2,13 @@
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
-<link rel="stylesheet" type="text/css" href="style.css"></link>
-
-<b:thumbnail>
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head></h:head>
+	<b:container>
+	
+		<div class="row">
+			<div class="clo-sm-12">
+				<b:thumbnail>
 	<div class="context">
 		<b:image alt="Generic placeholder thumbnail" value="apple.jpg"
 			style-class="img-responsive"></b:image>
@@ -15,7 +17,7 @@
 		</div>
 	</div>
 	<f:facet name="caption">
-		<h4>#{video.filename}</h4>
+		<h4>Northstar - Artitecture</h4>
 		<b:container fluid="true">
 			<b:row>
 				<div class="col-xs-8 col-sm-8 col-lg-10" style="padding-left: 0px">
@@ -25,16 +27,14 @@
 					</b:buttonGroup>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-lg-2 text-right" style="padding-right: 0px">
-					<b:commandButton icon-awesome="arrows-alt" size="xs" ajax="true" update="modalVideo" oncomplete="$('.videoModelClass').modal('show');return true;">
-						<f:param name="fileUrl" value="http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/b1-1.mov"></f:param>
-						<f:param name="fileName" value="#{video.filename}"></f:param>
-						
-						<f:ajax event="click" listener="#{videoBean.init}"></f:ajax>						
-					</b:commandButton>
+					<b:button icon-awesome="arrows-alt" size="xs" onclick="$('.videoModelClass').modal('show');return true;"></b:button>
 				</div>
 			</b:row>
 		</b:container>
 	</f:facet>
 </b:thumbnail>
 
+			</div>
+		</div>
+	</b:container>
 </html>

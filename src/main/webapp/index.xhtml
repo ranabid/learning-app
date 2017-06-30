@@ -4,16 +4,19 @@
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough" >
 <h:head>
 	<title>Skye: Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
 </h:head>
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
+
 	<ui:insert name="nbtop">
 		<ui:include src="navbar.xhtml" />
 	</ui:insert>
-	<ui:insert name="content">
-		<ui:include src="maincontent.xhtml" />
-	</ui:insert>
+		<ui:insert name="content">
+			<ui:include src="maincontent.xhtml" />
+		</ui:insert>
 </h:body>
 </html>
